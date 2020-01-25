@@ -1,0 +1,100 @@
+.component-container {
+  width: var(--max-content-width);
+  margin: 0 auto;
+  padding-top: 32px;
+
+  h1 {
+    margin-bottom: 32px;
+    font-family: gothamBold, sans-serif;
+    text-transform: uppercase;
+    color: var(--dark-color);
+  }
+
+  .content-wrapper {
+    display: flex;
+
+    .subtitle-header {
+      background: var(--light-color);
+      padding: 16px;
+      margin-bottom: 22px;
+
+      h2 {
+        font-family: gothamBook, sans-serif;
+        text-transform: uppercase;
+        color: var(--medium-color);
+        font-size: .8rem;
+      }
+    }
+
+    .dados-container {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 2;
+
+      form {
+        input {
+          width: 90%;
+          height: 45px;
+          padding-left: 16px;
+          font-family: gothamBook, sans-serif;
+          color: var(--dark-color);
+          font-size: 1rem;
+
+          &[type="checkbox"] {
+            height: initial;
+            width: initial;
+          }
+
+          &.ipt-email {
+            width: 95%;
+          }
+        }
+
+        .checkbox-wrapper {
+          display: flex;
+          margin-top: 16px;
+
+          label {
+            font-family: gothamBook, sans-serif;
+            color: var(--medium-color);
+            cursor: pointer;
+            transform: translateY(3px);
+            display: block;
+            margin-left: 6px;
+          }
+        }
+
+        .row {
+          width: 100%;
+          display: flex;
+          margin-top: 16px;
+
+          &:first-child {
+            margin-top: 0;
+          }
+
+          .col {
+            &.col-50 {
+              width: 50%;
+            }
+          }
+        }
+
+        .title-fieldgroup {
+          font-size: 1rem;
+          font-family: gothamMedium, sans-serif;
+          color: var(--dark-color);
+          text-transform: uppercase;
+          margin: 62px 0 32px 0;
+        }
+      }
+    }
+
+    .cart-container {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      border-left: solid 1px var(--medium-color);
+    }
+  }
+}
