@@ -1,0 +1,38 @@
+.component-container {
+  .info-container {
+    width: 90%;
+    margin: 0 auto;
+    border-top: solid 1px var(--light-color);
+
+    .info-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
+
+      &.total {
+        margin-top: 32px;
+        h2 {
+          font-family: gothamBold, sans-serif;
+          text-transform: uppercase;
+        }
+
+        p {
+          font-family: gothamBold, sans-serif;
+          color: var(--primary-color);
+        }
+      }
+
+      h2 {
+        font-family: gothamMedium, sans-serif;
+        color: var(--dark-color);
+        font-size: 1rem;
+      }
+
+      p {
+        font-family: gothamMedium, sans-serif;
+        color: var(--medium-color);
+        font-size: 1rem;
+      }
+    }
+  }
+}
