@@ -1,0 +1,29 @@
+.component-container {
+  .cart-list-item {
+    display: flex;
+    align-items: center;
+    margin: 0 0 22px 12px;
+
+    .poster {
+      width: 80px;
+      height: 80px;
+      background: var(--light-color);
+    }
+
+    .info {
+      margin-left: 12px;
+
+      * {
+        font-size: .8rem;
+        font-family: gothamBook, sans-serif;
+        color: var(--medium-color);
+        margin-top: 6px;
+      }
+
+      p {
+        margin-top: 12px;
+        color: var(--primary-color);
+      }
+    }
+  }
+}
