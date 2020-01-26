@@ -42,6 +42,11 @@
           font-family: gothamBook, sans-serif;
           color: var(--dark-color);
           font-size: 1rem;
+          border: solid 1px var(--light-shade-color);
+
+          &::placeholder {
+            color: var(--light-shade-color);
+          }
 
           &[type="checkbox"] {
             height: initial;
