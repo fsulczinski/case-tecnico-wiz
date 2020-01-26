@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-ticket-checkout',
@@ -9,13 +10,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class TicketCheckoutComponent implements OnInit {
 
     checkoutForm: FormGroup;
+    filmeSelecionado: any;
 
-    constructor(private fb: FormBuilder) {
+    constructor(private fb: FormBuilder, private route: ActivatedRoute) {
     }
 
     ngOnInit() {
         this.buildForm();
         console.log(this.checkoutForm);
+
+        this.filmeSelecionado = this.route.snapshot.params.id;
+        console.log(this.filmeSelecionado);
     }
 
     buildForm() {

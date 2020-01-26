@@ -10,6 +10,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { CartListComponent } from './components/cart/cart-list/cart-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CustomSelectComponent } from './components/custom-select/custom-select.component';
+import { MoviesListComponent } from './components/movies-list/movies-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CustomSelectComponent } from './components/custom-select/custom-select.
     FooterComponent,
     CartComponent,
     CartListComponent,
-    CustomSelectComponent
+    CustomSelectComponent,
+    MoviesListComponent
   ],
     imports: [
         BrowserModule,
