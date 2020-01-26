@@ -8,33 +8,64 @@
                 <h2>Dados Pessoais</h2>
             </div>
 
-            <form novalidate>
+            <form [formGroup]="checkoutForm">
                 <div class="row">
                     <div class="col col-50">
-                        <input type="text" placeholder="Primeiro nome"/>
+                        <input type="text" formControlName="primeiroNome" placeholder="Primeiro nome"/>
                     </div>
 
                     <div class="col col-50">
-                        <input type="text" placeholder="Último nome"/>
+                        <input type="text" formControlName="ultimoNome" placeholder="Último nome"/>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col col-50">
-                        <input type="text" placeholder="CPF"/>
+                        <input type="text" formControlName="cpf" placeholder="CPF"/>
                     </div>
 
                     <div class="col col-50">
-                        <input type="text" placeholder="Data de nascimento"/>
+                        <input type="text" formControlName="dtNascimento" placeholder="Data de nascimento"/>
                     </div>
                 </div>
 
                 <div class="row">
-                    <input class="ipt-ext" type="text" placeholder="Email"/>
+                    <input class="ipt-ext" type="text" formControlName="email" placeholder="Email"/>
                 </div>
+
+                <!--                DADOS ACOMPANHANTE-->
+                <ng-container *ngIf="checkoutForm.value.addAcompanhante">
+                    <h3 class="title-fieldgroup">Dados acompanhante</h3>
+
+                    <div class="row">
+                        <div class="col col-50">
+                            <input type="text" formControlName="primeiroNomeAcompanhante" placeholder="Primeiro nome"/>
+                        </div>
+
+                        <div class="col col-50">
+                            <input type="text" formControlName="ultimoNomeAcompanhante" placeholder="Último nome"/>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col col-50">
+                            <input type="text" formControlName="cpfAcompanhante" placeholder="CPF"/>
+                        </div>
+
+                        <div class="col col-50">
+                            <input type="text" formControlName="dtNascimentoAcompanhante"
+                                   placeholder="Data de nascimento"/>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <input class="ipt-ext" type="text" formControlName="emailAcompanhante" placeholder="Email"/>
+                    </div>
+                </ng-container>
+                <!--                FIM DADOS ACOMPANHANTE-->
 
                 <div class="checkbox-wrapper">
-                    <input type="checkbox" id="add-acompanhante" name="add-acompanhante"/>
+                    <input type="checkbox" id="add-acompanhante" formControlName="addAcompanhante"/>
                     <label for="add-acompanhante">Adicionar acompanhante?</label>
                 </div>
 
@@ -50,10 +81,10 @@
 
                 <div class="row">
                     <div class="col col-50">
-                        <!--                        TODO: CUSTOM SELECT COMPONENT-->
+                        <!--                        TODO CUSTOM SELECT CONTAINER-->
                     </div>
                     <div class="col col-50">
-                        <!--                        TODO: CUSTOM SELECT COMPONENT-->
+                        <!--                        TODO CUSTOM SELECT CONTAINER-->
                     </div>
                 </div>
 
