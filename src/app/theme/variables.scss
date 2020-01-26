@@ -10,3 +10,15 @@
   //NUMBERS
   --max-content-width: 75%;
 }
+
+@media screen and (max-width: 900px) {
+  * {
+    --max-content-width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  * {
+    --max-content-width: 99%;
+  }
+}
