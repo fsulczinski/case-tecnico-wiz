@@ -1,0 +1,22 @@
+<div class="component-container">
+    <div class="select-wrapper" (click)="toggleActive()">
+        {{label}}
+
+        <div class="options-wrapper" *ngIf="isSelectActive">
+            <div class="select-option">Opção 1</div>
+            <div class="select-option">Opção 2</div>
+            <div class="select-option">Opção 3</div>
+            <div class="select-option">Opção 4</div>
+            <div class="select-option">Opção 5</div>
+            <div class="select-option">Opção 6</div>
+            <div class="select-option">Opção 7</div>
+            <div class="select-option">Opção 8</div>
+            <div class="select-option">Opção 9</div>
+            <div class="select-option">Opção 10</div>
+        </div>
+
+        <div class="dropdown">
+            <img src="/assets/imgs/down-arrow.png" alt="" [ngClass]="{'rotate': isSelectActive}">
+        </div>
+    </div>
+</div>

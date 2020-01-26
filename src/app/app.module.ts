@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CartListComponent } from './components/cart/cart-list/cart-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CustomSelectComponent } from './components/custom-select/custom-select.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     TicketCheckoutComponent,
     FooterComponent,
     CartComponent,
-    CartListComponent
+    CartListComponent,
+    CustomSelectComponent
   ],
     imports: [
         BrowserModule,
