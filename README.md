@@ -1,27 +1,15 @@
 # CaseTecnicoWiz
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
 
-## Development server
+## Chaves necessárias de API --ATENÇÃO!--
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Na pasta raiz há um arquivo chamado `moviedb-config-sample.ts`. Este arquivo serve de base para criar o `moviedb-config.ts`, onde, você deverá inserir seu token de acesso à [API do The Movie DB v3](https://developers.themoviedb.org/3/getting-started/introduction) na constante MOVIEDB_TOKEN.
 
-## Code scaffolding
+## Servidor de desenvolvimento
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Rode `ng serve` para rodar o servidor de desenvolvimento. Navegue para `http://localhost:4200/`. A app se atualiza automaticamente caso sejam feitas alterações nos arquivos fonte.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Rode `ng build` para buildar o projeto.
