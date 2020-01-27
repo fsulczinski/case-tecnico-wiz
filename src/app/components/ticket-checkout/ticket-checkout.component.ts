@@ -84,13 +84,10 @@ export class TicketCheckoutComponent implements OnInit {
         let order = this.checkoutForm.value;
         order.pais = this.paisSelecionado;
         order.estado = this.estadoSelecionado;
+        order.filmeId = window.history.state.movie.id;
         if (this.checkoutForm.get('addAcompanhante').value === true) {
             order = { ...order, ...this.acompanhanteForm.value };
         }
         this.orderService.postOrder(order);
-    }
-
-    log(primeiroNome) {
-        console.log(primeiroNome);
     }
 }
