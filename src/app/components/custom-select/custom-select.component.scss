@@ -14,6 +14,10 @@
     font-size: 1rem;
     border: solid 1px var(--light-shade-color);
 
+    &.selected {
+      color: var(--dark-color);
+    }
+
     .options-wrapper {
       position: absolute;
       top: 100%;

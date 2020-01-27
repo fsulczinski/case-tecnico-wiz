@@ -11,6 +11,7 @@ export class CustomSelectComponent implements OnInit {
     @Input() label: string;
     @Output() selectedOption = new EventEmitter();
     isSelectActive = false;
+    isSelected = false;
 
     constructor() {
     }
@@ -20,5 +21,11 @@ export class CustomSelectComponent implements OnInit {
 
     toggleActive() {
         this.isSelectActive = !this.isSelectActive;
+    }
+
+    selectOption(option: any) {
+        this.selectedOption.emit(option);
+        this.label = option;
+        this.isSelected = true;
     }
 }
