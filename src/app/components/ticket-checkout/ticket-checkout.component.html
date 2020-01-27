@@ -3,8 +3,6 @@
     <h1>Formulário</h1>
 
     <div class="content-wrapper">
-        {{checkoutForm.valid}}
-        {{isFormValid()}}
         <div class="dados-container">
             <div class="subtitle-header">
                 <h2>Dados Pessoais</h2>
@@ -92,11 +90,12 @@
 
                 <div class="row">
                     <div class="col col-50">
-                        <app-custom-select [label]="'País'" [options]="['Brasil']"></app-custom-select>
+                        <app-custom-select [label]="'País'" [options]="['Brasil']"
+                                           (selectedOption)="getSelectedPais($event)"></app-custom-select>
                     </div>
                     <div class="col col-50">
                         <app-custom-select [label]="'Estado'" [options]="estados"
-                                           (selectedOption)="getSelectedOption($event)"></app-custom-select>
+                                           (selectedOption)="getSelectedEstado($event)"></app-custom-select>
                     </div>
                 </div>
 

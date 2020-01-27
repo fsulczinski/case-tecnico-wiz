@@ -14,6 +14,8 @@ export class TicketCheckoutComponent implements OnInit {
     checkoutForm: FormGroup;
     acompanhanteForm: FormGroup;
     filmeSelecionado: any;
+    estadoSelecionado: string;
+    paisSelecionado: string;
     estados: string[] = ESTADOS;
 
     constructor(
@@ -63,8 +65,12 @@ export class TicketCheckoutComponent implements OnInit {
         }
     }
 
-    getSelectedOption(ev: any) {
-        console.log(ev);
+    getSelectedEstado(ev: any) {
+        this.estadoSelecionado = ev;
+    }
+
+    getSelectedPais(ev: any) {
+        this.paisSelecionado = ev;
     }
 
     isFormValid() {
@@ -76,6 +82,8 @@ export class TicketCheckoutComponent implements OnInit {
 
     enviarReserva() {
         let order = this.checkoutForm.value;
+        order.pais = this.paisSelecionado;
+        order.estado = this.estadoSelecionado;
         if (this.checkoutForm.get('addAcompanhante').value === true) {
             order = { ...order, ...this.acompanhanteForm.value };
         }
