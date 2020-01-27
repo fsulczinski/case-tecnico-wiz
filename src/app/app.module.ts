@@ -7,7 +7,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { TicketCheckoutComponent } from './components/ticket-checkout/ticket-checkout.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CartComponent } from './components/cart/cart.component';
-import { CartListComponent } from './components/cart/cart-list/cart-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CustomSelectComponent } from './components/custom-select/custom-select.component';
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
@@ -20,7 +19,6 @@ import { HttpClientModule } from '@angular/common/http';
     TicketCheckoutComponent,
     FooterComponent,
     CartComponent,
-    CartListComponent,
     CustomSelectComponent,
     MoviesListComponent
   ],
