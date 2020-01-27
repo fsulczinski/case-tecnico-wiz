@@ -22,11 +22,13 @@
 
                 <div class="row">
                     <div class="col col-50">
-                        <input type="text" formControlName="cpf" placeholder="CPF"/>
+                        <input type="text" formControlName="cpf" placeholder="CPF"
+                               [brmasker]="{mask:'000.000.000-00', len:14, type:'num'}"/>
                     </div>
 
                     <div class="col col-50">
-                        <input type="text" formControlName="dtNascimento" placeholder="Data de nascimento"/>
+                        <input type="text" formControlName="dtNascimento" placeholder="Data de nascimento"
+                               [brmasker]="{mask:'00/00/0000', type:'num'}"/>
                     </div>
                 </div>
 
@@ -40,17 +42,20 @@
 
                     <div class="row">
                         <div class="col col-50">
-                            <input type="text" formControlName="primeiroNomeAcompanhante" placeholder="Primeiro nome"/>
+                            <input type="text" formControlName="primeiroNomeAcompanhante" placeholder="Primeiro nome"
+                                   [brmasker]="{type:'alfa'}"/>
                         </div>
 
                         <div class="col col-50">
-                            <input type="text" formControlName="ultimoNomeAcompanhante" placeholder="Último nome"/>
+                            <input type="text" formControlName="ultimoNomeAcompanhante" placeholder="Último nome"
+                                   [brmasker]="{type:'alfa'}"/>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col col-50">
-                            <input type="text" formControlName="cpfAcompanhante" placeholder="CPF"/>
+                            <input type="text" formControlName="cpfAcompanhante" placeholder="CPF"
+                                   [brmasker]="{mask:'000.000.000-00', len:14, type:'num'}"/>
                         </div>
 
                         <div class="col col-50">
@@ -85,7 +90,8 @@
                         <app-custom-select [label]="'País'" [options]="['Brasil']"></app-custom-select>
                     </div>
                     <div class="col col-50">
-                        <app-custom-select [label]="'Estado'" [options]="estados" (selectedOption)="getSelectedOption($event)"></app-custom-select>
+                        <app-custom-select [label]="'Estado'" [options]="estados"
+                                           (selectedOption)="getSelectedOption($event)"></app-custom-select>
                     </div>
                 </div>
 
@@ -94,7 +100,8 @@
                 </div>
 
                 <div class="row">
-                    <input class="ipt-ext" type="text" formControlName="telefone" placeholder="Telefone"/>
+                    <input class="ipt-ext" type="text" formControlName="telefone" placeholder="Telefone"
+                           [brmasker]="{phone: true}"/>
                 </div>
 
                 <button class="btn-enviar" (click)="enviarReserva()">Enviar</button>

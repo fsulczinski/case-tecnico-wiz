@@ -11,24 +11,27 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CustomSelectComponent } from './components/custom-select/custom-select.component';
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BrMaskerModule } from 'br-mask';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    TicketCheckoutComponent,
-    FooterComponent,
-    CartComponent,
-    CustomSelectComponent,
-    MoviesListComponent
-  ],
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        TicketCheckoutComponent,
+        FooterComponent,
+        CartComponent,
+        CustomSelectComponent,
+        MoviesListComponent
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,
+        BrMaskerModule
     ],
-  providers: [],
-  bootstrap: [AppComponent]
+    providers: [],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

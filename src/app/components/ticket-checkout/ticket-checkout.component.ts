@@ -24,8 +24,6 @@ export class TicketCheckoutComponent implements OnInit {
     ngOnInit() {
         this.buildForm();
         this.filmeSelecionado = window.history.state.movie;
-
-        console.log(this.filmeSelecionado, 'FILME SELECIONADO');
     }
 
     buildForm() {
