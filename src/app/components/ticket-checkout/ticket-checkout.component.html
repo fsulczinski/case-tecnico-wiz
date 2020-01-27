@@ -12,10 +12,12 @@
                 <div class="row">
                     <div class="col col-50">
                         <input type="text" formControlName="primeiroNome" placeholder="Primeiro nome"/>
+                        <app-input-help [input]="checkoutForm.controls.primeiroNome"></app-input-help>
                     </div>
 
                     <div class="col col-50">
                         <input type="text" formControlName="ultimoNome" placeholder="Último nome"/>
+                        <app-input-help [input]="checkoutForm.controls.ultimoNome"></app-input-help>
                     </div>
                 </div>
 
@@ -23,33 +25,38 @@
                     <div class="col col-50">
                         <input type="text" formControlName="cpf" placeholder="CPF"
                                [brmasker]="{mask:'000.000.000-00', len:14, type:'num'}"/>
+                        <app-input-help [input]="checkoutForm.controls.cpf"></app-input-help>
                     </div>
 
                     <div class="col col-50">
                         <input type="text" formControlName="dtNascimento" placeholder="Data de nascimento"
                                [brmasker]="{mask:'00/00/0000', type:'num', len:10}"/>
+                        <app-input-help [input]="checkoutForm.controls.dtNascimento"></app-input-help>
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row row-v">
                     <input class="ipt-ext" type="text" formControlName="email" placeholder="Email"/>
+                    <app-input-help [input]="checkoutForm.controls.email"></app-input-help>
                 </div>
 
                 <!--                DADOS ACOMPANHANTE-->
                 <ng-container *ngIf="checkoutForm.value.addAcompanhante">
                     <form [formGroup]="acompanhanteForm">
-                        <h3 class="title-fieldgroup">Dados acompanhante</h3>
+                        <h3 class="title-fieldgroup">Dados do acompanhante</h3>
 
                         <div class="row">
                             <div class="col col-50">
                                 <input type="text" formControlName="primeiroNomeAcompanhante"
                                        placeholder="Primeiro nome"
                                        [brmasker]="{type:'alfa'}"/>
+                                <app-input-help [input]="acompanhanteForm.controls.primeiroNomeAcompanhante"></app-input-help>
                             </div>
 
                             <div class="col col-50">
                                 <input type="text" formControlName="ultimoNomeAcompanhante" placeholder="Último nome"
                                        [brmasker]="{type:'alfa'}"/>
+                                <app-input-help [input]="acompanhanteForm.controls.ultimoNomeAcompanhante"></app-input-help>
                             </div>
                         </div>
 
@@ -57,17 +64,20 @@
                             <div class="col col-50">
                                 <input type="text" formControlName="cpfAcompanhante" placeholder="CPF"
                                        [brmasker]="{mask:'000.000.000-00', len:14, type:'num'}"/>
+                                <app-input-help [input]="acompanhanteForm.controls.cpfAcompanhante"></app-input-help>
                             </div>
 
                             <div class="col col-50">
                                 <input type="text" formControlName="dtNascimentoAcompanhante"
                                        placeholder="Data de nascimento"
                                        [brmasker]="{mask:'00/00/0000', type:'num', len:10}"/>
+                                <app-input-help [input]="acompanhanteForm.controls.dtNascimentoAcompanhante"></app-input-help>
                             </div>
                         </div>
 
-                        <div class="row">
+                        <div class="row row-v">
                             <input class="ipt-ext" type="text" formControlName="emailAcompanhante" placeholder="Email"/>
+                            <app-input-help [input]="acompanhanteForm.controls.emailAcompanhante"></app-input-help>
                         </div>
                     </form>
                 </ng-container>
@@ -82,10 +92,12 @@
 
                 <div class="row">
                     <input class="ipt-ext" type="text" formControlName="cep" placeholder="CEP" (change)="getAddress()"/>
+                    <app-input-help [input]="checkoutForm.controls.cep"></app-input-help>
                 </div>
 
                 <div class="row">
                     <input class="ipt-ext" type="text" formControlName="endereco" placeholder="Endereço"/>
+                    <app-input-help [input]="checkoutForm.controls.endereco"></app-input-help>
                 </div>
 
                 <div class="row">
@@ -101,11 +113,13 @@
 
                 <div class="row">
                     <input class="ipt-ext" type="text" formControlName="cidade" placeholder="Cidade"/>
+                    <app-input-help [input]="checkoutForm.controls.cidade"></app-input-help>
                 </div>
 
-                <div class="row">
+                <div class="row row-v">
                     <input class="ipt-ext" type="text" formControlName="telefone" placeholder="Telefone"
                            [brmasker]="{phone: true}"/>
+                    <app-input-help [input]="checkoutForm.controls.telefone"></app-input-help>
                 </div>
 
                 <button class="btn-enviar" (click)="enviarReserva()" [disabled]="!isFormValid()">Enviar</button>

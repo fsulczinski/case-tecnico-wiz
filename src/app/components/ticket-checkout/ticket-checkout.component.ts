@@ -89,4 +89,8 @@ export class TicketCheckoutComponent implements OnInit {
         }
         this.orderService.postOrder(order);
     }
+
+    log(primeiroNome) {
+        console.log(primeiroNome);
+    }
 }
