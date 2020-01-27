@@ -15,6 +15,6 @@ export class OrderService {
             headers: {
                 Authorization: 'Bearer #ASDFGW#ERWQERTRYT#%$%$@#$%=='
             }
-        }).subscribe(r => console.log(r));
+        }).subscribe(r => console.log(order));
     }
 }

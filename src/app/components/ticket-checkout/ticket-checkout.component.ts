@@ -12,6 +12,7 @@ import { OrderService } from '../../services/order/order.service';
 export class TicketCheckoutComponent implements OnInit {
 
     checkoutForm: FormGroup;
+    acompanhanteForm: FormGroup;
     filmeSelecionado: any;
     estados: string[] = ESTADOS;
 
@@ -22,11 +23,11 @@ export class TicketCheckoutComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.buildForm();
+        this.buildForms();
         this.filmeSelecionado = window.history.state.movie;
     }
 
-    buildForm() {
+    buildForms() {
         this.checkoutForm = this.fb.group({
             primeiroNome: this.fb.control('', [Validators.required]),
             ultimoNome: this.fb.control('', [Validators.required]),
@@ -34,15 +35,18 @@ export class TicketCheckoutComponent implements OnInit {
             dtNascimento: this.fb.control('', [Validators.required]),
             email: this.fb.control('', [Validators.required]),
             addAcompanhante: this.fb.control(''),
-            primeiroNomeAcompanhante: this.fb.control(''),
-            ultimoNomeAcompanhante: this.fb.control(''),
-            cpfAcompanhante: this.fb.control(''),
-            dtNascimentoAcompanhante: this.fb.control(''),
-            emailAcompanhante: this.fb.control(''),
             cep: this.fb.control('', [Validators.required]),
             endereco: this.fb.control('', [Validators.required]),
             cidade: this.fb.control('', [Validators.required]),
             telefone: this.fb.control('', [Validators.required]),
+        });
+
+        this.acompanhanteForm = this.fb.group({
+            primeiroNomeAcompanhante: this.fb.control('', [Validators.required]),
+            ultimoNomeAcompanhante: this.fb.control('', [Validators.required]),
+            cpfAcompanhante: this.fb.control('', [Validators.required]),
+            dtNascimentoAcompanhante: this.fb.control('', [Validators.required]),
+            emailAcompanhante: this.fb.control('', [Validators.required]),
         });
     }
 
@@ -63,7 +67,18 @@ export class TicketCheckoutComponent implements OnInit {
         console.log(ev);
     }
 
+    isFormValid() {
+        if (this.checkoutForm.get('addAcompanhante').value === true && !this.acompanhanteForm.valid) {
+            return false;
+        }
+        return this.checkoutForm.valid;
+    }
+
     enviarReserva() {
-        this.orderService.postOrder(this.checkoutForm.value);
+        let order = this.checkoutForm.value;
+        if (this.checkoutForm.get('addAcompanhante').value === true) {
+            order = { ...order, ...this.acompanhanteForm.value };
+        }
+        this.orderService.postOrder(order);
     }
 }
