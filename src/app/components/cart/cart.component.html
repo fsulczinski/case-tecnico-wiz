@@ -1,5 +1,14 @@
 <div class="component-container">
-    <app-cart-list></app-cart-list>
+    <div class="cart-list-item">
+        <div class="poster">
+            <img [src]="posterBaseUrl + '/w185' + movie.poster_path" alt="">
+        </div>
+        <div class="info">
+            <h2>Ingresso</h2>
+            <h3>FILME: {{movie.title}}</h3>
+            <p>R$20,00</p>
+        </div>
+    </div>
 
     <div class="info-container">
         <div class="info-wrapper">

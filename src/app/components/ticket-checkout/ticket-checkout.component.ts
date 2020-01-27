@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
 import { CepService } from '../../services/cep/cep.service';
 import { ESTADOS } from '../../Util/Estados';
+import { OrderService } from '../../services/order/order.service';
 
 @Component({
     selector: 'app-ticket-checkout',
@@ -17,8 +17,8 @@ export class TicketCheckoutComponent implements OnInit {
 
     constructor(
         private fb: FormBuilder,
-        private router: Router,
-        private cepService: CepService) {
+        private cepService: CepService,
+        private orderService: OrderService) {
     }
 
     ngOnInit() {
@@ -63,5 +63,9 @@ export class TicketCheckoutComponent implements OnInit {
 
     getSelectedOption(ev: any) {
         console.log(ev);
+    }
+
+    enviarReserva() {
+        this.orderService.postOrder(this.checkoutForm.value);
     }
 }

@@ -97,7 +97,7 @@
                     <input class="ipt-ext" type="text" formControlName="telefone" placeholder="Telefone"/>
                 </div>
 
-                <button class="btn-enviar" type="submit">Enviar</button>
+                <button class="btn-enviar" (click)="enviarReserva()">Enviar</button>
             </form>
         </div>
 
@@ -106,7 +106,7 @@
                 <h2>Seu ingresso</h2>
             </div>
 
-            <app-cart></app-cart>
+            <app-cart [movie]="filmeSelecionado"></app-cart>
         </div>
     </div>
 </div>
