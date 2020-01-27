@@ -11,6 +11,7 @@ import { CartListComponent } from './components/cart/cart-list/cart-list.compone
 import { ReactiveFormsModule } from '@angular/forms';
 import { CustomSelectComponent } from './components/custom-select/custom-select.component';
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MoviesListComponent } from './components/movies-list/movies-list.compon
         BrowserModule,
         AppRoutingModule,
         ReactiveFormsModule,
+        HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]

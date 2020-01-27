@@ -33,8 +33,14 @@
       }
 
       .movie-poster {
-        height: 200px;
-        background: var(--light-shade-color)
+        height: 220px;
+        overflow: hidden;
+        background: var(--light-shade-color);
+        border: solid 1px var(--light-shade-color);
+
+        img {
+          width: 100%;
+        }
       }
 
       .movie-info {

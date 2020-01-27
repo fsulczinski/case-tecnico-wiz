@@ -1,0 +1,4 @@
+const MOVIEDB_TOKEN = '';
+const MOVIEDB_IMAGE_BASE_URL = '';
+
+export { MOVIEDB_TOKEN, MOVIEDB_IMAGE_BASE_URL };

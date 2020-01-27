@@ -3,10 +3,12 @@
     <h2>Escolha um filme para reservar seu ingresso</h2>
 
     <div class="content-wrapper">
-        <div class="movie-card" *ngFor="let f of [1,2,3,4,5,6,7,8,9,10]" [routerLink]="['/ticket-checkout', f]">
-            <div class="movie-poster"></div>
+        <div class="movie-card" *ngFor="let movie of movies" [routerLink]="['/ticket-checkout', movie.id]">
+            <div class="movie-poster">
+                <img [src]="posterBaseUrl + '/w185' + movie.poster_path" alt="">
+            </div>
             <div class="movie-info">
-                <p>Nome do filme</p>
+                <p>{{movie.title}}</p>
             </div>
         </div>
     </div>
