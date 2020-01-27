@@ -3,12 +3,13 @@
     <h1>Formulário</h1>
 
     <div class="content-wrapper">
+        {{checkoutForm.valid}}
         <div class="dados-container">
             <div class="subtitle-header">
                 <h2>Dados Pessoais</h2>
             </div>
 
-            <form [formGroup]="checkoutForm">
+            <form [formGroup]="checkoutForm" novalidate>
                 <div class="row">
                     <div class="col col-50">
                         <input type="text" formControlName="primeiroNome" placeholder="Primeiro nome"/>
@@ -81,12 +82,10 @@
 
                 <div class="row">
                     <div class="col col-50">
-                        <!--                        TODO CUSTOM SELECT CONTAINER-->
-                        <app-custom-select [label]="'País'"></app-custom-select>
+                        <app-custom-select [label]="'País'" [options]="['Brasil']"></app-custom-select>
                     </div>
                     <div class="col col-50">
-                        <!--                        TODO CUSTOM SELECT CONTAINER-->
-                        <app-custom-select [label]="'Estado'"></app-custom-select>
+                        <app-custom-select [label]="'Estado'" [options]="estados" (selectedOption)="getSelectedOption($event)"></app-custom-select>
                     </div>
                 </div>
 

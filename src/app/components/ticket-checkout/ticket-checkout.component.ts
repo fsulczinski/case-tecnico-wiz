@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CepService } from '../../services/cep/cep.service';
+import { ESTADOS } from '../../Util/Estados';
 
 @Component({
     selector: 'app-ticket-checkout',
@@ -12,19 +13,19 @@ export class TicketCheckoutComponent implements OnInit {
 
     checkoutForm: FormGroup;
     filmeSelecionado: any;
+    estados: string[] = ESTADOS;
 
     constructor(
         private fb: FormBuilder,
-        private route: ActivatedRoute,
+        private router: Router,
         private cepService: CepService) {
     }
 
     ngOnInit() {
         this.buildForm();
-        console.log(this.checkoutForm);
+        this.filmeSelecionado = window.history.state.movie;
 
-        this.filmeSelecionado = this.route.snapshot.params.id;
-        console.log(this.filmeSelecionado);
+        console.log(this.filmeSelecionado, 'FILME SELECIONADO');
     }
 
     buildForm() {
@@ -35,12 +36,11 @@ export class TicketCheckoutComponent implements OnInit {
             dtNascimento: this.fb.control('', [Validators.required]),
             email: this.fb.control('', [Validators.required]),
             addAcompanhante: this.fb.control(''),
-            primeiroNomeAcompanhante: this.fb.control('', [Validators.required]),
-            ultimoNomeAcompanhante: this.fb.control('', [Validators.required]),
-            cpfAcompanhante: this.fb.control('', [Validators.required]),
-            dtNascimentoAcompanhante: this.fb.control('', [Validators.required]),
-            emailAcompanhante: this.fb.control('', [Validators.required]),
-            addAcompanhanteAcompanhante: this.fb.control(''),
+            primeiroNomeAcompanhante: this.fb.control(''),
+            ultimoNomeAcompanhante: this.fb.control(''),
+            cpfAcompanhante: this.fb.control(''),
+            dtNascimentoAcompanhante: this.fb.control(''),
+            emailAcompanhante: this.fb.control(''),
             cep: this.fb.control('', [Validators.required]),
             endereco: this.fb.control('', [Validators.required]),
             cidade: this.fb.control('', [Validators.required]),
@@ -59,5 +59,9 @@ export class TicketCheckoutComponent implements OnInit {
                 }
             });
         }
+    }
+
+    getSelectedOption(ev: any) {
+        console.log(ev);
     }
 }
