@@ -29,6 +29,7 @@
       border-color: var(--light-shade-color);
       max-height: 200px;
       overflow: auto;
+      z-index: 99;
 
       .select-option {
         padding: 16px;

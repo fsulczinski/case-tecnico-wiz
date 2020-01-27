@@ -12,6 +12,7 @@ import { CustomSelectComponent } from './components/custom-select/custom-select.
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrMaskerModule } from 'br-mask';
+import { InputHelpComponent } from './components/input-help/input-help.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { BrMaskerModule } from 'br-mask';
         FooterComponent,
         CartComponent,
         CustomSelectComponent,
-        MoviesListComponent
+        MoviesListComponent,
+        InputHelpComponent
     ],
     imports: [
         BrowserModule,
