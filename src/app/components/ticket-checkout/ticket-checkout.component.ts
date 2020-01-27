@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { CepService } from '../../services/cep/cep.service';
 
 @Component({
     selector: 'app-ticket-checkout',
@@ -12,7 +13,10 @@ export class TicketCheckoutComponent implements OnInit {
     checkoutForm: FormGroup;
     filmeSelecionado: any;
 
-    constructor(private fb: FormBuilder, private route: ActivatedRoute) {
+    constructor(
+        private fb: FormBuilder,
+        private route: ActivatedRoute,
+        private cepService: CepService) {
     }
 
     ngOnInit() {
@@ -37,7 +41,23 @@ export class TicketCheckoutComponent implements OnInit {
             dtNascimentoAcompanhante: this.fb.control('', [Validators.required]),
             emailAcompanhante: this.fb.control('', [Validators.required]),
             addAcompanhanteAcompanhante: this.fb.control(''),
+            cep: this.fb.control('', [Validators.required]),
+            endereco: this.fb.control('', [Validators.required]),
+            cidade: this.fb.control('', [Validators.required]),
+            telefone: this.fb.control('', [Validators.required]),
         });
     }
 
+    getAddress() {
+        const cep = this.checkoutForm.get('cep').value;
+        if (cep.length === 8) {
+            this.cepService.getAdressByCep(cep).subscribe(r => {
+                if (!r.erro) {
+                    this.checkoutForm.controls.cep.setValue(r.cep);
+                    this.checkoutForm.controls.endereco.setValue(r.logradouro);
+                    this.checkoutForm.controls.cidade.setValue(r.localidade);
+                }
+            });
+        }
+    }
 }
