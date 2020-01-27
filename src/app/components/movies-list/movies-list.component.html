@@ -3,7 +3,7 @@
     <h2>Escolha um filme para reservar seu ingresso</h2>
 
     <div class="content-wrapper">
-        <div class="movie-card" *ngFor="let movie of movies" [routerLink]="['/ticket-checkout', movie.id]">
+        <div class="movie-card" *ngFor="let movie of movies" (click)="navTicketCheckout(movie)">
             <div class="movie-poster">
                 <img [src]="posterBaseUrl + '/w185' + movie.poster_path" alt="">
             </div>
